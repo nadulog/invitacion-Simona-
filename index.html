@@ -4,12 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#d9ada7">
-  <meta name="description" content="Invitación a los XV de Simona — 27 de noviembre de 2026">
+  <meta name="description" content="Con mucha alegría quiero invitarte a compartir una noche inolvidable: mis XV. Te espero para celebrar juntos este momento tan especial.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mis XV Simona">
+  <meta property="og:description" content="Con mucha alegría quiero invitarte a compartir una noche inolvidable: mis XV. Te espero para celebrar juntos este momento tan especial.">
+  <meta property="og:url" content="https://bloomdate-simona15.netlify.app/">
+  <meta property="og:image" content="https://bloomdate-simona15.netlify.app/assets/whatsapp-simona.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="600">
+  <meta property="og:image:alt" content="Invitación a los XV de Simona">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Mis XV Simona</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260901-23">
+  <link rel="stylesheet" href="styles.css?v=20260901-24">
 </head>
 <body>
   <div class="welcome-screen" id="welcomeScreen" role="dialog" aria-modal="true" aria-label="Elegir cómo entrar a la invitación">
@@ -82,11 +92,6 @@
       <div class="video-section__ornament video-section__ornament--bottom" aria-hidden="true"><span>✦</span></div>
     </section>
 
-    <section class="panel panel--gift" aria-label="Regalos">
-      <img src="assets/regalos.png" alt="Regalos: tu presencia es el mejor regalo" loading="lazy">
-      <button class="image-action image-action--gift" id="giftButton" type="button">Ver datos</button>
-    </section>
-
     <section class="panel panel--music" aria-label="Música">
       <img src="assets/musica.png" alt="Música: ayudame a elegir la música de esta noche" loading="lazy">
       <button class="image-action image-action--music" id="musicButton" type="button">Agregar canción</button>
@@ -95,6 +100,11 @@
     <section class="panel panel--bloomkeep" aria-label="BloomKeep">
       <img src="assets/bloomkeep.png" alt="BloomKeep: compartí tus fotos y mensajes en tiempo real" loading="lazy">
       <button class="image-action image-action--bloomkeep" id="bloomkeepButton" type="button">Ir a BloomKeep</button>
+    </section>
+
+    <section class="panel panel--gift" aria-label="Regalos">
+      <img src="assets/regalos-limpio.png" alt="Regalos: tu presencia es el mejor regalo" loading="lazy">
+      <button class="image-action image-action--gift" id="giftButton" type="button">Ver datos</button>
     </section>
     <section class="photo-gallery" aria-labelledby="galleryTitle">
       <div class="photo-gallery__ornament" aria-hidden="true"><span>✦</span></div>
@@ -151,10 +161,26 @@
     </div>
   </div>
 
+  <div class="gift-modal" id="giftModal" role="dialog" aria-modal="true" aria-labelledby="giftModalTitle" hidden>
+    <div class="gift-modal__card">
+      <button class="gift-modal__close" type="button" aria-label="Cerrar">×</button>
+      <div class="gift-modal__ornament" aria-hidden="true">✦</div>
+      <p class="gift-modal__eyebrow">Datos para regalar</p>
+      <h2 id="giftModalTitle">Gracias por<br>acompañarme</h2>
+      <div class="gift-modal__divider" aria-hidden="true"><span>✦</span></div>
+      <dl class="gift-modal__data">
+        <div><dt>Nombre y apellido</dt><dd>Simona Alanis Cabanas</dd></div>
+        <div><dt>Alias</dt><dd id="giftAlias">simo.alanis</dd></div>
+        <div><dt>Entidad</dt><dd>Mercado Pago</dd></div>
+      </dl>
+      <button class="gift-modal__copy" id="copyGiftAlias" type="button">Copiar alias</button>
+    </div>
+  </div>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <audio id="invitationAudio" loop preload="metadata">
     <source src="assets/taylor-swift.mp3" type="audio/mpeg">
   </audio>
-  <script src="script.js?v=20260901-22"></script>
+  <script src="script.js?v=20260901-24"></script>
 </body>
 </html>

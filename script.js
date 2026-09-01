@@ -76,8 +76,39 @@ function setupLocation() {
 }
 
 function setupGifts() {
-  document.querySelector("#giftButton").addEventListener("click", () => {
-    showToast(GIFT_DETAILS || "Próximamente compartiremos los datos");
+  const button = document.querySelector("#giftButton");
+  const modal = document.querySelector("#giftModal");
+  const closeButton = modal.querySelector(".gift-modal__close");
+  const copyButton = document.querySelector("#copyGiftAlias");
+
+  function openGiftModal() {
+    modal.hidden = false;
+    document.body.classList.add("gift-modal-open");
+    closeButton.focus();
+  }
+
+  function closeGiftModal() {
+    modal.hidden = true;
+    document.body.classList.remove("gift-modal-open");
+    button.focus();
+  }
+
+  button.addEventListener("click", openGiftModal);
+  closeButton.addEventListener("click", closeGiftModal);
+  modal.addEventListener("click", (event) => { if (event.target === modal) closeGiftModal(); });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) closeGiftModal();
+  });
+  copyButton.addEventListener("click", async () => {
+    copyButton.textContent = "Alias copiado";
+    window.clearTimeout(copyButton.resetTimeout);
+    copyButton.resetTimeout = window.setTimeout(() => { copyButton.textContent = "Copiar alias"; }, 2200);
+    try {
+      await navigator.clipboard.writeText("simo.alanis");
+      showToast("Alias copiado");
+    } catch {
+      showToast("Alias: simo.alanis");
+    }
   });
 }
 

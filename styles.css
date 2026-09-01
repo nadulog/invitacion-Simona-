@@ -233,8 +233,7 @@ body.invitation-entered .audio-toggle { opacity: 1; pointer-events: auto; }
 .panel--date-v2 .image-action--calendar { top: 62.2%; left: 41.2%; width: 39%; height: 5.2%; padding: 0; opacity: 0; }
 .panel--location-v2 .image-action--location { top: 81.5%; left: 48.8%; width: 44%; height: 6.2%; }
 .panel--gift { overflow: hidden; }
-.panel--gift > img { margin-top: -20%; }
-.image-action--gift { top: 39.5%; width: 32%; height: 5.4%; opacity: 0; }
+.image-action--gift { top: 46.4%; width: 32%; height: 5.3%; opacity: 0; }
 .image-action--music { top: 33.8%; left: 23.8%; width: 34%; height: 4.4%; opacity: 0; }
 .image-action--bloomkeep { top: 30%; left: 22.8%; width: 30.5%; height: 4.4%; opacity: 0; }
 .image-action--rsvp { top: 34.7%; width: 43%; height: 5.2%; opacity: 0; }
@@ -530,6 +529,46 @@ body.lightbox-open { overflow: hidden; }
 .location-modal address { margin: 0 0 28px; color: var(--wine); font: normal 500 clamp(1.05rem, 4vw, 1.25rem)/1.55 "Cormorant Garamond", Georgia, serif; letter-spacing: .035em; }
 .location-modal__map { position: relative; z-index: 1; display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: 0 25px; border: 1px solid #c59a56; border-radius: 999px; color: #fff8f1; background: var(--wine); box-shadow: 0 8px 20px rgb(84 25 29 / .22); font-size: clamp(.65rem, 2.5vw, .78rem); letter-spacing: .18em; text-decoration: none; text-transform: uppercase; }
 body.location-modal-open { overflow: hidden; }
+
+.gift-modal {
+  position: fixed;
+  z-index: 95;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgb(30 13 15 / .78);
+  backdrop-filter: blur(8px);
+}
+.gift-modal[hidden] { display: none; }
+.gift-modal__card {
+  position: relative;
+  width: min(100%, 430px);
+  padding: clamp(42px, 10vw, 62px) clamp(25px, 7vw, 42px) clamp(30px, 8vw, 44px);
+  overflow: hidden;
+  border: 1px solid #c69a52;
+  border-radius: 24px;
+  background: linear-gradient(150deg, #faeee8, #e5beb4);
+  box-shadow: 0 24px 70px rgb(0 0 0 / .45);
+  text-align: center;
+}
+.gift-modal__card::before,
+.gift-modal__card::after { position: absolute; width: 150px; height: 150px; border: 1px solid rgb(84 25 29 / .18); border-radius: 50%; content: ""; }
+.gift-modal__card::before { top: -112px; left: -65px; }
+.gift-modal__card::after { right: -90px; bottom: -115px; }
+.gift-modal__close { position: absolute; z-index: 2; top: 9px; right: 11px; width: 42px; height: 42px; padding: 0; border: 0; color: var(--wine); background: transparent; font: 300 2rem/1 sans-serif; cursor: pointer; }
+.gift-modal__ornament { margin-bottom: 12px; color: var(--gold); font-size: 1.2rem; }
+.gift-modal__eyebrow { margin: 0 0 9px; font-size: .66rem; letter-spacing: .34em; text-transform: uppercase; }
+.gift-modal h2 { margin: 0; color: var(--wine); font: 500 clamp(2.25rem, 9vw, 3.35rem)/.95 "Cormorant Garamond", Georgia, serif; }
+.gift-modal__divider { display: flex; align-items: center; gap: 10px; width: 72%; margin: 22px auto; color: var(--gold); }
+.gift-modal__divider::before,
+.gift-modal__divider::after { height: 1px; flex: 1; background: var(--wine); content: ""; }
+.gift-modal__data { position: relative; z-index: 1; margin: 0; text-align: left; }
+.gift-modal__data div { padding: 11px 0; border-bottom: 1px solid rgb(84 25 29 / .16); }
+.gift-modal__data dt { margin-bottom: 4px; color: rgb(84 25 29 / .68); font-size: .59rem; letter-spacing: .2em; text-transform: uppercase; }
+.gift-modal__data dd { margin: 0; color: var(--wine); font: 600 clamp(1rem, 4vw, 1.2rem)/1.25 "Cormorant Garamond", Georgia, serif; letter-spacing: .035em; }
+.gift-modal__copy { position: relative; z-index: 1; min-height: 46px; margin-top: 24px; padding: 0 24px; border: 1px solid #c59a56; border-radius: 999px; color: #fff8f1; background: var(--wine); box-shadow: 0 8px 20px rgb(84 25 29 / .2); font: 500 .68rem/1 "Montserrat", sans-serif; letter-spacing: .18em; text-transform: uppercase; cursor: pointer; }
+body.gift-modal-open { overflow: hidden; }
 
 .panel--bloomdate-contact { background: #000; }
 .bloomdate-contact__link {
