@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d9ada7">
+  <meta name="description" content="Invitación a los XV de Simona — 27 de noviembre de 2026">
+  <title>Mis XV Simona</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260901-23">
+</head>
+<body>
+  <div class="welcome-screen" id="welcomeScreen" role="dialog" aria-modal="true" aria-label="Elegir cómo entrar a la invitación">
+    <div class="welcome-screen__art">
+      <img src="assets/entrada-simona.png" alt="Simona, Mis XV" fetchpriority="high">
+      <button class="welcome-screen__choice welcome-screen__choice--music" id="enterWithMusic" type="button" aria-label="Entrar con música"></button>
+      <button class="welcome-screen__choice welcome-screen__choice--silent" id="enterWithoutMusic" type="button" aria-label="Entrar sin música"></button>
+    </div>
+  </div>
+
+  <button class="audio-toggle" id="audioToggle" type="button" aria-label="Reproducir música" aria-pressed="false">
+    <svg class="audio-toggle__note" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 3v11.35A3.5 3.5 0 1 1 16 11.2V6.1l-7 1.55v8.7A3.5 3.5 0 1 1 7 13.2V6.05c0-.7.48-1.31 1.17-1.46l8.6-1.91A1 1 0 0 1 18 3Z"/></svg>
+  </button>
+
+  <main class="invitation">
+    <section class="panel panel--cover" aria-label="Invitación a los quince años de Simona">
+      <img src="assets/portada.png" alt="Mis XV Simona" fetchpriority="high">
+      <a class="scroll-cue" href="#cuenta" aria-label="Continuar hacia la cuenta regresiva"><span></span></a>
+    </section>
+
+    <section class="panel panel--countdown" id="cuenta" aria-label="Cuenta regresiva">
+      <img src="assets/cuenta-regresiva-limpia.png" alt="Falta muy poco">
+      <div class="countdown" aria-live="polite">
+        <div><strong id="days">000</strong><span>Días</span></div>
+        <div><strong id="hours">00</strong><span>Horas</span></div>
+        <div><strong id="minutes">00</strong><span>Minutos</span></div>
+        <div><strong id="seconds">00</strong><span>Segundos</span></div>
+      </div>
+      <p class="event-started" id="eventStarted" hidden>¡Llegó el gran día!</p>
+    </section>
+
+    <section class="panel panel--date-v2" aria-label="Fecha y hora">
+      <img src="assets/fecha-hora-v3.png" alt="27 de noviembre a las 21:00 horas" loading="lazy">
+      <a class="image-action image-action--calendar" id="calendarLink" href="#" target="_blank" rel="noopener" aria-label="Agregar la fecha al calendario">Agendar fecha</a>
+    </section>
+
+    <section class="panel panel--location-v2" aria-label="Cómo llegar">
+      <img src="assets/como-llegar-v3.png" alt="Cómo llegar" loading="lazy">
+      <button class="image-action image-action--location" id="locationButton" type="button">Ver ubicación</button>
+    </section>
+
+    <section class="panel" aria-label="Código de vestimenta">
+      <img src="assets/dress-code-elegante.png" alt="Dress code elegante: todos de negro" loading="lazy">
+    </section>
+
+    <section class="video-section video-section--duo" aria-labelledby="videosTitle">
+      <div class="video-section__ornament" aria-hidden="true"><span>✦</span></div>
+      <h2 class="video-section__title-phrase" id="videosTitle">DOS MOMENTOS ESPECIALES PARA MÍ</h2>
+
+      <div class="video-block">
+        <div class="video-frame">
+          <video controls muted playsinline preload="metadata" aria-label="Video de los quince de Simona, sin sonido">
+            <source src="assets/simona-cuenta-regresiva.mp4" type="video/mp4">
+            Tu navegador no puede reproducir este video.
+          </video>
+        </div>
+        <p class="video-section__note">Dale play y viví conmigo la emoción de este momento</p>
+      </div>
+
+      <div class="video-block">
+        <div class="video-frame">
+          <video controls muted playsinline preload="metadata" data-end-time="46" aria-label="Video de Simona sin sonido, hasta el segundo 46">
+            <source src="assets/simona.mp4" type="video/mp4">
+            Tu navegador no puede reproducir este video.
+          </video>
+        </div>
+        <p class="video-section__note">Dale play para compartir este momento conmigo</p>
+      </div>
+
+      <div class="video-section__ornament video-section__ornament--bottom" aria-hidden="true"><span>✦</span></div>
+    </section>
+
+    <section class="panel panel--gift" aria-label="Regalos">
+      <img src="assets/regalos.png" alt="Regalos: tu presencia es el mejor regalo" loading="lazy">
+      <button class="image-action image-action--gift" id="giftButton" type="button">Ver datos</button>
+    </section>
+
+    <section class="panel panel--music" aria-label="Música">
+      <img src="assets/musica.png" alt="Música: ayudame a elegir la música de esta noche" loading="lazy">
+      <button class="image-action image-action--music" id="musicButton" type="button">Agregar canción</button>
+    </section>
+
+    <section class="panel panel--bloomkeep" aria-label="BloomKeep">
+      <img src="assets/bloomkeep.png" alt="BloomKeep: compartí tus fotos y mensajes en tiempo real" loading="lazy">
+      <button class="image-action image-action--bloomkeep" id="bloomkeepButton" type="button">Ir a BloomKeep</button>
+    </section>
+    <section class="photo-gallery" aria-labelledby="galleryTitle">
+      <div class="photo-gallery__ornament" aria-hidden="true"><span>✦</span></div>
+      <p class="photo-gallery__eyebrow">Mi gran pasión</p>
+      <h2 id="galleryTitle">Simona</h2>
+      <p class="photo-gallery__intro">Sueños, esfuerzo y momentos que quedan para siempre</p>
+
+      <div class="photo-gallery__carousel">
+        <button class="photo-gallery__nav photo-gallery__nav--prev" type="button" aria-label="Foto anterior">‹</button>
+        <div class="photo-gallery__grid">
+          <button class="photo-gallery__item photo-gallery__item--hero" type="button" data-gallery-index="0" aria-label="Ver foto 1 de Simona"><img src="assets/simona-galeria-01.jpeg" alt="Simona a caballo representando a Argentina" loading="lazy"></button>
+          <button class="photo-gallery__item" type="button" data-gallery-index="1" aria-label="Ver foto 2 de Simona"><img src="assets/simona-galeria-02.jpeg" alt="Simona a caballo con la bandera argentina" loading="lazy"></button>
+          <button class="photo-gallery__item" type="button" data-gallery-index="2" aria-label="Ver foto 3 de Simona"><img src="assets/simona-galeria-03.jpeg" alt="Simona levantando un trofeo" loading="lazy"></button>
+          <button class="photo-gallery__item photo-gallery__item--wide" type="button" data-gallery-index="3" aria-label="Ver foto 4 de Simona"><img src="assets/simona-galeria-04.jpeg" alt="Simona durante una competencia de salto" loading="lazy"></button>
+        </div>
+        <button class="photo-gallery__nav photo-gallery__nav--next" type="button" aria-label="Foto siguiente">›</button>
+      </div>
+      <p class="photo-gallery__hint">Deslizá para ver más · Tocá una foto para ampliarla</p>
+      <div class="photo-gallery__ornament photo-gallery__ornament--bottom" aria-hidden="true"><span>✦</span></div>
+    </section>
+
+    <section class="panel panel--rsvp" aria-label="Confirmar asistencia">
+      <img src="assets/confirmar-asistencia.png" alt="¿Venís? Quiero compartir esta noche tan especial con vos" loading="lazy">
+      <button class="image-action image-action--rsvp" id="rsvpButton" type="button">Confirmar asistencia</button>
+    </section>
+
+    <section class="panel panel--bloomdate-contact" aria-label="Contacto de Bloomdate">
+      <img src="assets/bloomdate-contacto.png" alt="Hecho con amor por Bloomdate" loading="lazy">
+      <a class="bloomdate-contact__link bloomdate-contact__link--whatsapp" href="https://wa.me/541140436324" target="_blank" rel="noopener" aria-label="Contactar a Bloomdate por WhatsApp al 54 11 4043 6324"></a>
+      <a class="bloomdate-contact__link bloomdate-contact__link--instagram" href="https://www.instagram.com/bloomdate.invitaciones/" target="_blank" rel="noopener" aria-label="Ver Bloomdate Invitaciones en Instagram"></a>
+      <a class="bloomdate-contact__link bloomdate-contact__link--web" href="https://bloomdate-site.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar el sitio web de Bloomdate"></a>
+    </section>
+  </main>
+
+  <div class="lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Galería de fotos de Simona" hidden>
+    <button class="lightbox__close" type="button" aria-label="Cerrar galería">×</button>
+    <button class="lightbox__arrow lightbox__arrow--prev" type="button" aria-label="Foto anterior">‹</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__image" src="" alt="">
+      <figcaption class="lightbox__counter" aria-live="polite"></figcaption>
+    </figure>
+    <button class="lightbox__arrow lightbox__arrow--next" type="button" aria-label="Foto siguiente">›</button>
+  </div>
+
+  <div class="location-modal" id="locationModal" role="dialog" aria-modal="true" aria-labelledby="locationModalTitle" hidden>
+    <div class="location-modal__card">
+      <button class="location-modal__close" type="button" aria-label="Cerrar">×</button>
+      <div class="location-modal__ornament" aria-hidden="true">✦</div>
+      <p class="location-modal__eyebrow">Cómo llegar</p>
+      <h2 id="locationModalTitle">Salón del<br>Colegio Médico</h2>
+      <div class="location-modal__divider" aria-hidden="true"><span>✦</span></div>
+      <address>Armada Argentina 3002<br>Rada Tilly</address>
+      <a class="location-modal__map" href="https://share.google/pFxXKKBpxFRk7xKTv" target="_blank" rel="noopener">Abrir en Google Maps</a>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <audio id="invitationAudio" loop preload="metadata">
+    <source src="assets/taylor-swift.mp3" type="audio/mpeg">
+  </audio>
+  <script src="script.js?v=20260901-22"></script>
+</body>
+</html>
