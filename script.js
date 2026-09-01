@@ -3,7 +3,7 @@ const LOCATION_URL = "https://share.google/pFxXKKBpxFRk7xKTv";
 const GIFT_DETAILS = "";
 const MUSIC_URL = "https://open.spotify.com/playlist/1lxHP0LHTlmkNU0AKxeHwd?si=7l7zoMXdSbiMtfP1-h9Xjw&utm_source=whatsapp&pt=cad947bb37bd16954bbde998f2ce7f6d&pi=OlDkYZRrRWmvz";
 const BLOOMKEEP_URL = "https://app.bloomkeep.site/simona-15";
-const RSVP_URL = "";
+const RSVP_URL = "https://bloomdate-rsvp.netlify.app/r/cumple-xv-simona";
 
 const fields = {
   days: document.querySelector("#days"),
